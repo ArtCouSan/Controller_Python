@@ -24,7 +24,7 @@ class Customer_Id(Resource):
         result = {'data': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
         return jsonify(result)
 
-class Customer_Id_Delete(Resource):
+class Customers_Id_Delete(Resource):
 	def delete(self, customer_id):
 		conn = db_connect.connect()
 		query = conn.execute("delete from customers where CustomerId = %d" %int(customer_id))
